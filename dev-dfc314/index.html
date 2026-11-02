@@ -796,9 +796,8 @@ html,body{overflow-x:clip}
 .h-hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px;padding:40px 0 24px}
 .h-sec{margin-top:96px}.h-sec.h-sec-top{margin-top:40px}
 .h-topics{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.h-topic{border:1px solid var(--border-default);padding:32px;display:flex;flex-direction:column;gap:24px;cursor:pointer;transition:border-color .15s}
-.h-topic:hover{border-color:var(--border-strong)}
-.h-topic .hd{display:flex;gap:16px;align-items:flex-start}.h-topic .hd>.ico{width:32px;height:32px}.h-topic .hd p{margin-top:4px}
+.h-topic{border:1px solid var(--border-default);padding:32px;display:flex;flex-direction:column;gap:24px}
+.h-topic .hd{display:flex;gap:16px;align-items:flex-start;width:100%;text-align:left}.h-topic .hd>div{flex:1}.h-topic .hd>.ico:last-child{width:20px;height:20px;margin-top:2px;transition:transform .15s}.h-topic .hd:hover h3{color:var(--text-secondary)}.h-topic .hd:hover>.ico:last-child{transform:translateX(3px)}.h-topic .hd h3{transition:color .15s}.h-topic .hd>.ico{width:32px;height:32px}.h-topic .hd p{margin-top:4px}
 .h-topic .ln{display:flex;flex-direction:column}
 .h-topic .ln button{display:flex;justify-content:space-between;align-items:center;gap:8px;width:100%;padding:12px 0;border-top:1px solid var(--border-default);font-size:15px;font-weight:600;text-align:left;transition:color .15s}
 .h-topic .ln button:hover{color:var(--text-secondary)}.h-topic .ln .ico{width:16px;height:16px}
@@ -872,19 +871,19 @@ html,body{overflow-x:clip}
 .bp-abc button,.bp-abc span{min-width:32px;height:32px;padding:0 6px;display:grid;place-items:center;font-size:14px;font-weight:600}
 .bp-abc span{color:var(--text-tertiary)}.bp-abc button:hover{background:var(--bg-tertiary)}.bp-abc button.on{background:var(--text-primary);color:var(--text-inverse)}
 .bp-g{display:flex;gap:30px;padding:24px 0;border-top:1px solid var(--border-default);scroll-margin-top:120px}.bp-g>b{width:60px;flex:none;line-height:1.25}
-.bp-g .names{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:4px 20px}
-.bp-g .names button{display:flex;align-items:baseline;gap:6px;padding:6px 0;text-align:left;font-size:15px;font-weight:500;transition:color .15s}.bp-g .names button:hover{color:var(--text-secondary)}
+.bp-g .names{flex:1;columns:3;column-gap:30px}
+.bp-g .names button{display:flex;width:100%;break-inside:avoid;align-items:baseline;gap:6px;padding:4px 0;text-align:left;font-size:15px;font-weight:500;transition:color .15s}.bp-g .names button:hover{color:var(--text-secondary)}
 .bp-g .names span{font-size:12px;color:var(--text-secondary)}
-.thx-row{display:flex;gap:30px;align-items:flex-start}
-.thx-card{width:915px;flex:none}
+.thx-row{display:block}
+.thx-card{width:100%}
 .thx-ok{display:flex;align-items:center;gap:16px;padding:20px 32px;background:var(--action-primary-default)}.thx-ok>.ico{width:32px;height:32px}.thx-ok p{margin-top:4px}
-.thx-body{border:1px solid var(--border-default);border-top:0;padding:32px;display:flex;flex-direction:column;gap:24px}
+.thx-body{border:1px solid var(--border-default);border-top:0;padding:32px;display:flex;gap:32px;align-items:stretch}.thx-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:24px}
 .thx-head{display:flex;justify-content:space-between;align-items:center;gap:16px}.thx-head p{margin-top:4px}
 .thx-st{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
 .thx-thumbs{display:flex;gap:12px}.thx-thumbs .th{position:relative;width:72px;height:72px;background:var(--bg-tertiary);display:grid;place-items:center}
 .thx-thumbs img{width:60px;height:60px;object-fit:contain}.thx-thumbs b{position:absolute;right:0;bottom:0;background:var(--action-primary-default);font-size:10px;font-weight:700;padding:1px 4px}
 .thx-info{width:100%}.thx-info .spec{font-size:14px}
-.thx-sum{width:375px;flex:none;padding:0;display:flex;flex-direction:column;gap:16px}
+.thx-sum{width:375px;flex:none;padding:0 0 0 32px;border-left:1px solid var(--border-default);display:flex;flex-direction:column;gap:16px}
 .thx-sum .rows{display:flex;flex-direction:column;gap:8px;font-size:14px}.thx-sum .rows div{display:flex;justify-content:space-between}.thx-sum .rows span:first-child{color:var(--text-secondary)}
 .thx-sum .tot{display:flex;justify-content:space-between;align-items:baseline;font-size:16px}.thx-sum .tot b:last-child{font-size:21px}
 .thx-sum .bonus{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}.thx-sum .bonus i{width:12px;height:12px;border-radius:50%;background:var(--action-primary-default)}
@@ -1217,7 +1216,7 @@ function HContact(){return `<aside class="h-contact">${ic('circle-help')}<h3 cla
 function HelpHub(){const H=HELP.hub;
   return `<div class="wrap help">
    <section class="h-hero"><h1 class="t-display">${esc(H.title)}</h1><p class="t-body-l muted">${esc(H.subtitle)}</p>${HSearch('l',H.placeholder)}</section>
-   <section class="sect h-sec h-sec-top"><div class="h-topics">${H.topics.map(t=>`<div class="h-topic" data-hgo="${t.page}" role="link" tabindex="0"><div class="hd">${ic(t.icon)}<div><h3 class="t-h3">${esc(t.t)}</h3><p class="t-body-m muted">${esc(t.d)}</p></div></div><div class="ln">${t.links.map(([l,a])=>`<button data-hgo="${t.page}" ${a?`data-hanchor="${hSlug(t.page,a)}"`:''}>${esc(l)}${ic('chevron-right')}</button>`).join('')}</div></div>`).join('')}</div></section>
+   <section class="sect h-sec h-sec-top"><div class="h-topics">${H.topics.map(t=>`<div class="h-topic"><button class="hd" data-hgo="${t.page}">${ic(t.icon)}<div><h3 class="t-h3">${esc(t.t)}</h3><p class="t-body-m muted">${esc(t.d)}</p></div>${ic('chevron-right')}</button><div class="ln">${t.links.map(([l,a])=>`<button data-hgo="${t.page}" ${a?`data-hanchor="${hSlug(t.page,a)}"`:''}>${esc(l)}${ic('chevron-right')}</button>`).join('')}</div></div>`).join('')}</div></section>
    <section class="sect h-sec">${SectionHeader('Ещё для покупателей')}<div class="h-more">${H.more.map(([t,d,i])=>`<button class="h-tl" data-toast="Раздел «${esc(t)}» в работе">${ic(i)}<span class="tx"><b>${esc(t)}</b><span>${esc(d)}</span></span>${ic('chevron-right')}</button>`).join('')}</div></section>
    <div class="h-row h-sec"><section class="sect h-faqw">${SectionHeader('Популярные вопросы')}<div class="h-faq">${H.faq.map((f,i)=>{const o=S.hfaq===i;return `<div class="h-fq ${o?'open':''}"><button class="q" data-hfaq="${i}" aria-expanded="${o}"><span class="t-h4">${esc(f[0])}</span>${ic(o?'chevron-up':'chevron-down')}</button>${o?`<div class="a"><p class="t-body-text">${esc(f[1])}</p><button class="more" data-hgo="${f[2]}" ${f[3]?`data-hanchor="${hSlug(f[2],f[3])}"`:''}>${esc(HELP.pages[f[2]].nav)}${ic('chevron-right')}</button></div>`:''}</div>`}).join('')}</div></section>${HContact()}</div>
   </div>`}
@@ -1697,13 +1696,12 @@ function Thanks(){const o=ORDER;if(!o.t)return Home();const t=o.t;
   const sp=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
   return `<div class="wrap pg thx"><div class="thx-row">
    <section class="thx-card"><div class="thx-ok">${ic('check')}<div><h1 class="t-h2">Спасибо за покупку!</h1><p class="t-body-l">Подтверждение отправили по SMS на +7 705 453 97 56</p></div></div>
-    <div class="thx-body"><div class="thx-head"><div><h2 class="t-h2">Заказ № ${o.no}</h2><p class="t-body-m muted">от ${o.date} · ${t.qty} ${pl(t.qty,'товар','товара','товаров')} · ${o.ship} ${pl(o.ship,'отправление','отправления','отправлений')}</p></div><span class="thx-st"><i class="pulse"></i>Собираем заказ</span></div>
+    <div class="thx-body"><div class="thx-main"><div class="thx-head"><div><h2 class="t-h2">Заказ № ${o.no}</h2><p class="t-body-m muted">от ${o.date} · ${t.qty} ${pl(t.qty,'товар','товара','товаров')} · ${o.ship} ${pl(o.ship,'отправление','отправления','отправлений')}</p></div><span class="thx-st"><i class="pulse"></i>Собираем заказ</span></div>
      <div class="thx-thumbs">${o.items.map(x=>`<span class="th"><img src="${img(x.c)}" alt="${esc(x.c[1]+' '+x.c[2])}">${x.q>1?`<b>${x.q} шт</b>`:''}</span>`).join('')}</div>
      <div class="specs thx-info">${rows.map(([a,b])=>`<div class="spec"><span>${a}</span><span>${b}</span></div>`).join('')}</div>
-     <p class="t-body-m muted">Когда заказ будет готов к выдаче, пришлём SMS. Статус и состав заказа — в разделе «Мои заказы».</p></div></section>
-   <aside class="thx-sum"><h3 class="t-h3">Сумма заказа</h3><div class="rows"><div><span>Товары, ${t.qty} шт.</span><span>${F(t.old)}</span></div>${t.disc?`<div><span>Скидка</span><span>−${F(t.disc)}</span></div>`:''}<div><span>Доставка</span><span>${o.dmode==='pick'?'Бесплатно':F(t.del)}</span></div></div>
+     <p class="t-body-m muted">Когда заказ будет готов к выдаче, пришлём SMS. Статус и состав заказа — в разделе «Мои заказы».</p></div><aside class="thx-sum"><h3 class="t-h3">Сумма заказа</h3><div class="rows"><div><span>Товары, ${t.qty} шт.</span><span>${F(t.old)}</span></div>${t.disc?`<div><span>Скидка</span><span>−${F(t.disc)}</span></div>`:''}<div><span>Доставка</span><span>${o.dmode==='pick'?'Бесплатно':F(t.del)}</span></div></div>
     <div class="tot"><b>Итого</b><b>${F(t.total)}</b></div><div class="bonus"><i></i>+${sp(t.bon)} ${pl(t.bon,'бонус','бонуса','бонусов')} начислим после получения</div>
-    <div class="btns"><button class="btn btn-primary" data-home>Продолжить покупки</button><button class="btn btn-secondary" data-goorder>Следить за заказом</button></div></aside></div></div>`}
+    <div class="btns"><button class="btn btn-primary" data-home>Продолжить покупки</button><button class="btn btn-secondary" data-goorder>Следить за заказом</button></div></aside></div></section></div></div>`}
 function thxDate(){const d=new Date();const M=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];return `${d.getDate()} ${M[d.getMonth()]} ${d.getFullYear()}, ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`}
 document.addEventListener('click',e=>{const t=e.target.closest('[data-gopromos],[data-gobrands],[data-ptab],[data-bpl],[data-bcat]');if(!t)return;e.stopPropagation();const d=t.dataset;
   if('gopromos' in d)return go('promos');if('gobrands' in d)return go('brands');
