@@ -1795,7 +1795,7 @@ function Thanks(){const o=ORDER;if(!o.t)return Home();const t=o.t;
    ['Получатель','Максим, +7 705 453 97 56'],['Оплата',o.pay===0?'Kaspi.kz — счёт придёт в приложение Kaspi':o.pay===1?'Картой онлайн — оплачено':'В рассрочку — банк пришлёт решение по SMS']];
   const sp=n=>String(n).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
   return `<div class="wrap pg thx"><div class="thx-col">
-   <div class="thx-hero"><div class="thx-t">${ic('check','thx-mark')}<h1 class="t-h1">Спасибо за покупку!</h1></div><p class="t-body-l muted">Подтверждение отправили по SMS <span class="thx-ph">на +7 705 453 97 56</span></p></div>
+   <div class="thx-hero"><div class="thx-t"><h1 class="t-h1">Спасибо за покупку!</h1></div><p class="t-body-l muted">Подтверждение отправили по SMS <span class="thx-ph">на +7 705 453 97 56</span></p></div>
    <section class="thx-card"><div class="thx-head"><h2 class="t-h3">Заказ № ${o.no}</h2><p class="t-body-m muted">от ${o.date} · ${t.qty} ${pl(t.qty,'товар','товара','товаров')} · ${o.ship} ${pl(o.ship,'отправление','отправления','отправлений')}</p></div>
     <div class="thx-thumbs">${o.items.map(x=>`<span class="th"><img src="${img(x.c)}" alt="${esc(x.c[1]+' '+x.c[2])}">${x.q>1?`<b>${x.q} шт</b>`:''}</span>`).join('')}</div>
     <div class="specs thx-info">${rows.map(([a,b])=>`<div class="spec"><span>${a}</span><span>${b}</span></div>`).join('')}</div>
