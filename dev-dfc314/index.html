@@ -871,7 +871,7 @@ html,body{overflow-x:clip}
 .bp-abc>div{gap:2px!important}.bp-abc button,.bp-abc span{min-width:30px;height:32px;padding:0 4px;display:grid;place-items:center;font-size:14px;font-weight:600}
 .bp-abc span{color:var(--text-tertiary)}.bp-abc button:hover{background:var(--bg-tertiary)}.bp-abc button.on{background:var(--text-primary);color:var(--text-inverse)}
 .bp-g{display:flex;flex-direction:column;gap:16px;padding:0 0 48px;scroll-margin-top:120px}.bp-g>b{font-size:26px;font-weight:600;line-height:1.25}
-.bp-g .names{columns:2 300px;column-gap:30px;width:630px}
+.bp-g .names{columns:2;column-gap:30px;width:510px}
 .bp-g .names button{display:block;width:100%;break-inside:avoid;padding:5px 0;text-align:left;font-size:15px;font-weight:500;line-height:1.2;transition:color .15s}.bp-g .names button:hover{color:var(--text-secondary)}
 .bp-g .names span{display:none}
 
@@ -983,6 +983,29 @@ html,body{overflow-x:clip}
 
 .m .thx-ph{display:block}
 .m .bp-abc{display:none}
+
+/* «О компании» — варианты шапки */
+.ab-v2,.ab-v3{padding-top:0}
+.abh2{position:relative;height:640px;overflow:hidden;color:#fff}.abh2 picture,.abh3 picture,.abh4 picture{display:block;height:100%}.abh2 img,.abh3 img,.abh4 img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.abh2::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 38%,rgba(0,0,0,0) 62%)}
+.abh2>.wrap{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;padding-bottom:64px}.abh2-t{width:645px;display:flex;flex-direction:column;gap:20px}
+.abh2 h1{margin:0;font-size:44px;font-weight:700;line-height:1.05;color:#fff}.abh2 p{margin:0;font-size:16px;font-weight:500;line-height:1.5;color:rgba(255,255,255,.85);max-width:510px}
+.ab-v2 .crumbs,.ab-v3 .crumbs{margin-top:24px}
+.abh-cols{margin:32px 0 0 675px;width:645px}.abh-cols p,.abh3-row p,.abh4-txt p{margin:0;font-size:15px;font-weight:500;line-height:1.5;color:var(--text-secondary)}
+.abh3{height:680px;position:relative;box-shadow:inset 0 1px 0 var(--border-default)}
+.abh3-row{display:flex;gap:30px;padding-top:40px}.abh3-row h1{width:645px;flex:none;margin:0;font-size:44px;line-height:1.05}.abh3-row>div{width:645px;display:flex;flex-direction:column;gap:16px;padding-top:6px}
+.abh4{position:relative;height:620px;margin-top:32px}.abh4 picture{height:620px}
+.abh4-card{position:absolute;left:0;bottom:-104px;width:780px;background:var(--action-primary-default);padding:36px 40px 40px}.abh4-card h1{margin:0;font-size:32px;font-weight:700;line-height:1.12}
+.abh4-txt{margin:40px 0 0 810px;width:510px!important;width:645px;display:flex;flex-direction:column;gap:16px}
+.abv-sw{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:4px;padding:6px;background:var(--text-primary);color:var(--text-inverse);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.abv-sw>span{font-size:12px;font-weight:600;padding:0 10px 0 8px;opacity:.6}
+.abv-sw button{display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;color:inherit;font-size:13px;font-weight:600}.abv-sw button b{width:20px;height:20px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.35);font-size:11px}.abv-sw button i{font-style:normal}
+.abv-sw button:hover{background:rgba(255,255,255,.1)}.abv-sw button.on{background:var(--action-primary-default);color:var(--text-primary)}.abv-sw button.on b{border-color:var(--text-primary)}
+.m .abv-sw{bottom:calc(72px + env(safe-area-inset-bottom,0px));padding:4px}.m .abv-sw button{padding:0 10px;height:32px}.m .abv-sw button i{display:none}.m .abv-sw>span{padding:0 6px}
+.m .abh2{height:520px}.m .abh2>.wrap{padding-bottom:28px}.m .abh2-t{width:auto;gap:12px}.m .abh2 h1{font-size:26px}.m .abh2 p{font-size:14px}.m .abh2::after{background:linear-gradient(0deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,0) 75%)}
+.m .abh-cols{margin:24px 0 0;width:auto}.m .abh3{height:auto;aspect-ratio:4/3;margin-top:0}.m .abh3-row{flex-direction:column;gap:16px;padding-top:24px}.m .abh3-row h1{width:auto;font-size:26px}.m .abh3-row>div{width:auto;padding:0}
+.m .abh4{height:auto;margin:16px -16px 0}.m .abh4 picture{height:auto;aspect-ratio:4/3}.m .abh4-card{position:relative;left:auto;bottom:auto;width:auto;margin:-40px 16px 0;padding:20px}.m .abh4-card h1{font-size:22px}.m .abh4-txt{margin:20px 0 0;width:auto!important}
+.m .ab-v2 .abh2 img,.m .ab-v3 .abh3 img{object-position:center}
 </style>
 
 <div id="app"></div>
@@ -1819,7 +1842,7 @@ const AB_PARTNERS=[["p01.png","BI Group"],["p02.svg","Kazakhmys"],["p03.svg","К
 const AB_HIST=[['2003','Основание',['Поставка первых компрессорных установок']],['2005','Генераторы',['Начало поставки дизельных генераторов']],['2006','Партнёры',['Начало партнёрства с российскими, китайскими и европейскими поставщиками']],['2009','Свой склад',['Завершение строительства центрального офиса и склада']],['2010','Первые магазины',['Открытие магазинов розничной сети TSSP в Алматы и Шымкенте']],['2011','Прямые продажи',['Открытие отдела прямых продаж и отдела электроинструментов']],['2013','Импортёр №1',['Импортёр №1 по ряду линеек строительной техники','11 место в рейтинге самых быстрорастущих компаний Forbes Kazakhstan']],['2014','Снова в Forbes',['13 место в рейтинге самых быстрорастущих компаний Forbes Kazakhstan']],['2016','Группа компаний',['Реструктуризация в группу и ребрендинг компании','Открытие магазина розничной сети TSSP в Атырау']],['2017','Восток и столица',['Открытие магазинов розничной сети TSSP в Усть-Каменогорске и Астане']],['2019','Туркестан',['Открытие магазина розничной сети TSSP в Туркестане']],['2020','Костанай',['Открытие магазина розничной сети TSSP в Костанае']],['2021','Караганда',['Открытие магазина розничной сети TSSP в Караганде']],['2022','Три города за год',['Открытие магазинов розничной сети TSSP в Актобе, Кокшетау и Павлодаре']],['2024','Первый магазин за рубежом',['Открытие магазинов розничной сети TSSP в Уральске и Ташкенте']],['2025','Приложение TSSP',['Запуск мобильного приложения TSSP','Открытие второго магазина розничной сети TSSP в Алматы']],['2026','Третий в Алматы',['Открытие третьего магазина розничной сети TSSP в Алматы']]];
 const AB_HIMG=['hist-2005','hist-2010','hist-2009'];
 const abPh=(label,cls='')=>`<div class="ab-ph ${cls}"><span>${esc(label)}</span></div>`;
-function AboutPage(){const mob=window.matchMedia('(max-width: 767px)').matches,W=mob?1000:1320,H=mob?1000:680,K=mob?(W-24)/829:Math.min((W-80)/829,(H-80)/552),OX=(W-829*K)/2-44*K,OY=(H-552*K)/2-56*K;
+function AboutPage(){const v=abV();const mob=window.matchMedia('(max-width: 767px)').matches,W=mob?1000:1320,H=mob?1000:680,K=mob?(W-24)/829:Math.min((W-80)/829,(H-80)/552),OX=(W-829*K)/2-44*K,OY=(H-552*K)/2-56*K;
   const map=`<div class="ab-map"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><g transform="translate(${OX} ${OY}) scale(${K})"><path d="${AB_MAP.uz}" class="uz"/><path d="${AB_MAP.kz}" class="kz"/></g></svg>
     <span class="ab-country" style="left:${((mob?285:421)*K+OX)/W*100}%;top:${((mob?262:272)*K+OY)/H*100}%">КАЗАХСТАН</span><span class="ab-country" style="left:${((mob?262:300)*K+OX)/W*100}%;top:${((mob?548:520)*K+OY)/H*100}%">УЗБЕКИСТАН</span>
     ${AB_CITIES.map(([n,x,y,pos,hl])=>{if(mob){if(n==='Костанай')pos='L';const mv={'Усть-Каменогорск':[777,256,'B'],'Ташкент':[468,515],'Уральск':[150,178],'Атырау':[172,305]}[n];if(mv){x=mv[0];y=mv[1];if(mv[2])pos=mv[2]}}const X=x*K+OX,Y=y*K+OY;return `<span class="ab-city ${pos==='L'?'l':pos==='B'?'bt':''} ${hl?'hl':''}" style="left:${X/W*100}%;top:${Y/H*100}%"><i></i><b>${n}</b></span>`}).join('')}</div><p class="ab-clist">${AB_CITIES.map(c=>c[0]).join(' · ')}</p>`;
@@ -1828,21 +1851,34 @@ function AboutPage(){const mob=window.matchMedia('(max-width: 767px)').matches,W
   const cell=(r,c,inner)=>`<div class="ab-cl ${c===cols?'lc':''} ${r===rows?'lr':''}" style="grid-row:${r};grid-column:${c}">${inner||''}</div>`;
   lay.forEach((row,ri)=>{const r=ri+1;if(row==='C')return;for(let c=1;c<=cols;c++){if(!mob&&(r===3||r===4)&&(c===3||c===4))continue;if(row.includes(c)&&k<PL.length){const [f,nm]=PL[k++];cells.push(cell(r,c,`<img src="img/about/partners/${f}" alt="${esc(nm)}" title="${esc(nm)}">`))}else cells.push(cell(r,c))}});
   cells.push(`<div class="ab-cc" style="${mob?'grid-row:5;grid-column:1/4':'grid-row:3/5;grid-column:3/5'}"><h2 class="t-h1">Нам доверяют крупнейшие компании Казахстана</h2><button class="btn btn-primary" data-toast="Форма для корпоративных клиентов — в работе">Стать клиентом</button></div>`);
-  return `<div class="ab">
+  return `<div class="ab ab-v${v}">${v===2||v===3?abTop(v,mob):''}
    <div class="wrap"><nav class="crumbs"><button data-home>главная</button><span>/</span><span>о компании</span></nav>
-    <div class="ab-top"><img class="ab-hero ab-img" src="img/about/hero-1x.jpg" srcset="img/about/hero-1x.jpg 780w, img/about/hero.jpg 1560w" sizes="(max-width:767px) 100vw, 780px" alt="Мастер в кабине строительной техники">
-    <div class="ab-mis"><h1 class="t-h1">Сеть магазинов TSSP — крупнейший поставщик инструментов и строительного оборудования в Казахстане</h1>
-     <p>Подбираем, поставляем и обслуживаем технику и инструмент из Китая, Бельгии, Испании, Италии, Германии, Швеции, Турции и других стран — от премиальных решений до бюджетных.</p>
-     <p>Работаем с горнодобывающими и нефтегазовыми компаниями, стройкой и дорожными службами, энергетикой, агро- и пищевой отраслью, а также со службами спасения, полицией и армией.</p></div></div>
+    ${v===1?abTop(1,mob):''}${v===4?abTop(4,mob):''}${v===2||v===3?abTxt(v):''}
     <section class="ab-sec ab-stsec"><div class="ab-hh"><h2 class="t-h1 ab-h">Мы сегодня</h2><div class="arrows"><button class="iconbtn" data-scroll="abStats" data-dir="-1" aria-label="Назад">${ic('chevron-left')}</button><button class="iconbtn" data-scroll="abStats" data-dir="1" aria-label="Вперёд">${ic('chevron-right')}</button></div></div><div class="row-scroll ab-stats" id="abStats">${AB_STATS.map(([v,c])=>`<div><b>${v}</b><span>${c}</span></div>`).join('')}</div></section>
     <section class="ab-sec"><h2 class="t-h1 ab-h">Наши магазины по всей стране: <br>от Алматы до Уральска</h2>${map}</section>
     <section class="ab-sec"><div class="ab-hh"><h2 class="t-h1 ab-h">23 года роста: от компрессоров <br>до сети магазинов в двух странах</h2><div class="arrows"><button class="iconbtn" data-scroll="abHist" data-dir="-1" aria-label="Назад">${ic('chevron-left')}</button><button class="iconbtn" data-scroll="abHist" data-dir="1" aria-label="Вперёд">${ic('chevron-right')}</button></div></div>
      <div class="row-scroll ab-hist" id="abHist">${AB_HIST.map(([y,t,d],i)=>`<div class="ab-slide"><img class="ab-img" src="img/about/${AB_HIMG[i%3]}.jpg" alt=""><b class="t-display">${y}</b><h3 class="t-h3">${esc(t)}</h3>${d.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`).join('')}</div></section>
     <section class="ab-sec"><div class="ab-head"><h2 class="t-h1">Люди, которые любят своё дело</h2><p>Мы тщательно подбираем людей, чьи ценности совпадают с нашими, и развиваем их навыки. 460+ специалистов хорошо знают технику, быстро решают задачи клиентов и говорят на казахском, русском, английском, украинском и китайском.</p><a class="btn btn-secondary ab-ig" href="https://www.instagram.com/tssp.team/?hl=bg" target="_blank" rel="noopener">${ic('instagram')}Toolpar Team</a></div>
      <div class="ab-col">${P.map(([x,y,w,h],i)=>`<img class="ab-img" src="img/about/team${i+1}.jpg" alt="Команда TSSP" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px">`).join('')}</div></section>
-    <section class="ab-sec ab-last"><div class="ab-grid">${cells.join('')}</div></section>
+    ${abSwitch()}<section class="ab-sec ab-last"><div class="ab-grid">${cells.join('')}</div></section>
    </div></div>`}
 
+
+const AB_T='Сеть магазинов TSSP — крупнейший поставщик инструментов и строительного оборудования в Казахстане';
+const AB_P1='Подбираем, поставляем и обслуживаем технику и инструмент из Китая, Бельгии, Испании, Италии, Германии, Швеции, Турции и других стран — от премиальных решений до бюджетных.';
+const AB_P2='Работаем с горнодобывающими и нефтегазовыми компаниями, стройкой и дорожными службами, энергетикой, агро- и пищевой отраслью, а также со службами спасения, полицией и армией.';
+const AB_VN=['Сплит','Текст на фото','Фото под шапкой','Жёлтая плашка'];
+function abV(){if(!S.abv){let x=1;try{x=+localStorage.getItem('tp-abv')||1}catch(e){}S.abv=x>=1&&x<=4?x:1}return S.abv}
+const abPic=(n,w,alt)=>`<picture><source media="(max-width:767px)" srcset="img/about/hm.jpg"><img class="ab-img" src="img/about/${n}.jpg" srcset="img/about/${n}.jpg ${w}w, img/about/${n}@2x.jpg ${w*2}w" sizes="(max-width:767px) 100vw, ${w}px" alt="${alt}"></picture>`;
+function abTop(v,mob){const alt='Оператор строительной техники в кабине';
+  if(v===1)return `<div class="ab-top">${abPic('hs',780,alt).replace('class="ab-img"','class="ab-img ab-hero"')}<div class="ab-mis"><h1 class="t-h1">${AB_T}</h1><p>${AB_P1}</p><p>${AB_P2}</p></div></div>`;
+  if(v===2)return `<section class="abh2">${abPic('hw',1440,alt)}<div class="wrap"><div class="abh2-t"><h1>${AB_T}</h1><p>${AB_P1}</p></div></div></section>`;
+  if(v===3)return `<section class="abh3">${abPic('hu',1440,alt)}</section>`;
+  return `<section class="abh4">${abPic('hy',1320,alt)}<div class="abh4-card"><h1>${AB_T}</h1></div></section><div class="abh4-txt"><p>${AB_P1}</p><p>${AB_P2}</p></div>`}
+function abTxt(v){return v===2?`<div class="abh-cols"><p>${AB_P2}</p></div>`:`<div class="abh3-row"><h1 class="t-h1">${AB_T}</h1><div><p>${AB_P1}</p><p>${AB_P2}</p></div></div>`}
+function abSwitch(){return `<div class="abv-sw" role="group" aria-label="Варианты шапки"><span>Шапка</span>${AB_VN.map((n,i)=>`<button data-abv="${i+1}" class="${abV()===i+1?'on':''}"><b>${i+1}</b><i>${n}</i></button>`).join('')}</div>`}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-abv]');if(!b)return;e.stopPropagation();S.abv=+b.dataset.abv;try{localStorage.setItem('tp-abv',S.abv)}catch(x){}const y=scrollY;render(true);scrollTo(0,0)},true);
+window.abSwitch=abSwitch;window.abV=abV;
 window.AboutPage=AboutPage;window.ORDER=ORDER;window.PromosPage=PromosPage; window.BrandsPage=BrandsPage; window.Thanks=Thanks;
 window.Cart=Cart; window.Order=Order; window.lines_n=()=>lines().length;
 /* ---- События ---- */
