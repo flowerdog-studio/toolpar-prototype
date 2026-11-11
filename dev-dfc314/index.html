@@ -1892,7 +1892,7 @@ function abTop(v){
   if(v===4)return `<section class="abh3">${abPic('hu',1440,AB_ALT)}</section>`;
   if(v>=6)return `<section class="abh5 abh6 ${v===7?'abh7':''}">${abPic('hx',1440,AB_ALT)}<div class="wrap"><h1>${AB_TH}</h1></div></section>`;
   return `<section class="abh5">${abPic('hx',1440,AB_ALT)}</section>`}
-function abTxt(v){if(v===2||v>=6)return `<div class="abh-2c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;if(v===3)return `<div class="abh-1c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;
+function abTxt(v){if(v===2)return `<div class="abh-2c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;if(v===3||v>=6)return `<div class="abh-1c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;
   return `<div class="abh3-row"><h1 class="t-h1">${AB_TH}</h1><div><p>${AB_P1}</p><p>${AB_P2}</p></div></div>`}
 function abSwitch(){return `<div class="abv-sw ${abSwOn()?'':'off'}" role="group" aria-label="Варианты шапки"><span>Шапка</span>${AB_VN.map((n,i)=>`<button data-abv="${i+1}" class="${abV()===i+1?'on':''}" title="${n}"><b>${i+1}</b><i>${n}</i></button>`).join('')}<button class="abv-x" data-abvx aria-label="Скрыть панель" title="Скрыть — ⌥V / Alt+V">${ic('x')}</button></div>`}
 function abSet(x){S.abv=x;try{localStorage.setItem('tp-abv',x)}catch(e){}render(true);scrollTo(0,0)}
