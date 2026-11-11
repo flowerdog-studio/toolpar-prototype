@@ -985,7 +985,7 @@ html,body{overflow-x:clip}
 .m .bp-abc{display:none}
 
 /* «О компании» — варианты шапки */
-.ab-v2,.ab-v3,.ab-v4,.ab-v5{padding-top:0}.ab-v1 .ab-top{padding-top:8px}
+.ab-v2,.ab-v3,.ab-v4,.ab-v5,.ab-v6,.ab-v7{padding-top:0}.ab-v1 .ab-top{padding-top:8px}
 .abh2,.abh3,.abh5{position:relative;overflow:hidden}.abh2 picture,.abh3 picture,.abh5 picture{display:block;height:100%}.abh2 img,.abh3 img,.abh5 img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
 .abh2{height:640px;color:#fff}.abh2::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.38) 40%,rgba(0,0,0,0) 62%)}
 .abh2>.wrap{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;padding-bottom:64px}
@@ -1001,7 +1001,7 @@ html,body{overflow-x:clip}
 .abv-sw{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:4px;padding:6px;background:var(--text-primary);color:var(--text-inverse);box-shadow:0 8px 24px rgba(0,0,0,.2);transition:opacity .2s,transform .2s}
 .abv-sw.off{opacity:0;pointer-events:none;transform:translate(-50%,12px)}
 .abv-sw>span{font-size:12px;font-weight:600;padding:0 10px 0 8px;opacity:.6}
-.abv-sw button{display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;color:inherit;font-size:13px;font-weight:600;white-space:nowrap}.abv-sw button b{width:20px;height:20px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.35);font-size:11px}.abv-sw button i{font-style:normal}
+.abv-sw button{display:flex;align-items:center;gap:8px;height:36px;padding:0 12px;color:inherit;font-size:13px;font-weight:600;white-space:nowrap}.abv-sw button b{width:20px;height:20px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.35);font-size:11px}.abv-sw button i{font-style:normal;display:none}.abv-sw button.on i{display:inline}
 .abv-sw button:hover{background:rgba(255,255,255,.1)}.abv-sw button.on{background:var(--action-primary-default);color:var(--text-primary)}.abv-sw button.on b{border-color:var(--text-primary)}
 .abv-sw .abv-x{padding:0 8px;margin-left:4px;opacity:.7}.abv-sw .abv-x .ico{width:16px;height:16px}
 .m .abv-sw{bottom:calc(72px + env(safe-area-inset-bottom,0px));padding:4px}.m .abv-sw button{padding:0 10px;height:32px}.m .abv-sw button i{display:none}.m .abv-sw>span{padding:0 6px}
@@ -1011,6 +1011,13 @@ html,body{overflow-x:clip}
 .m .abh-2c{grid-template-columns:1fr;gap:16px}.m .abh-1c{width:auto}.m .abh-2c,.m .abh-1c,.m .abh3-row{padding-top:24px}
 .m .abh3-row{flex-direction:column;gap:16px}.m .abh3-row h1{width:auto}.m .abh3-row>div{width:auto;padding:0}
 .m .abh-2c p,.m .abh-1c p,.m .abh3-row p{font-size:14px}
+
+.abh6::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.34) 40%,rgba(0,0,0,0) 62%),linear-gradient(0deg,rgba(0,0,0,.35) 0%,rgba(0,0,0,0) 40%)}
+.abh6>.wrap{position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;padding-bottom:64px}.abh6 h1{margin:0;font-size:44px;font-weight:700;line-height:1.08;color:#fff}
+.abh7::after{opacity:0;transition:opacity .5s}.abh7 h1{opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
+.hdr-solid .abh7::after{opacity:1}.hdr-solid .abh7 h1{opacity:1;transform:none}
+.m .abh6{aspect-ratio:4/5}.m .abh6>.wrap{padding-bottom:24px}.m .abh6::after{background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,0) 70%)}.m .abh6 h1{font-size:26px}.m .abh6 h1 br{display:none}
+.m .abv-sw>span{display:none}.m .abv-sw button{padding:0 7px}
 </style>
 
 <div id="app"></div>
@@ -1405,7 +1412,7 @@ function render(keepScroll){
   if(!window.matchMedia('(max-width: 767px)').matches){document.documentElement.style.overflow=S.menuOpen?'hidden':'';
   const cat=document.querySelector('.catalog'),sh=document.getElementById('shopping');if(cat&&sh){const z=parseFloat(app.style.zoom)||1;cat.style.top=(sh.getBoundingClientRect().bottom/z)+'px'}}
   if(S.viewer) startViewer();
-  app.classList.toggle('hdr-clear',S.view==='about'&&window.abV&&abV()===5);app.classList.toggle('hdr-solid',scrollY>8);
+  app.classList.toggle('hdr-clear',S.view==='about'&&window.abV&&abV()>=5);app.classList.toggle('hdr-solid',scrollY>8);
   typo(app);
 }
 function go(view,id){S.view=view;S.cat=id||null;S.menuOpen=false;S.menuPath=[];S.sortOpen=false;S.gal=0;S.inst=false;S.specsAll=false;S.filters={};S.closed={};S.more={};if(!go._pop)history.pushState({view,id:id||null},'');render();window.scrollTo(0,0)}
@@ -1873,9 +1880,9 @@ function AboutPage(){const v=abV();const mob=window.matchMedia('(max-width: 767p
 const AB_T='Сеть магазинов TSSP — крупнейший поставщик инструментов и строительного оборудования в Казахстане';
 const AB_P1='Подбираем, поставляем и обслуживаем технику и инструмент из Китая, Бельгии, Испании, Италии, Германии, Швеции, Турции и других стран — от премиальных решений до бюджетных.';
 const AB_P2='Работаем с горнодобывающими и нефтегазовыми компаниями, стройкой и дорожными службами, энергетикой, агро- и пищевой отраслью, а также со службами спасения, полицией и армией.';
-const AB_VN=['Сплит','Текст на фото · 2 колонки','Текст на фото · 1 колонка','Фото под шапкой','Под прозрачной шапкой'];
+const AB_VN=['Сплит','Текст на фото · 2 колонки','Текст на фото · 1 колонка','Фото под шапкой','Под прозрачной шапкой','Прозрачная шапка + заголовок','Заголовок при скролле'];
 const AB_TH='Сеть магазинов TSSP — <br>крупнейший поставщик <br>инструментов и строительного <br>оборудования в Казахстане';
-function abV(){if(!S.abv){let x=1;try{x=+localStorage.getItem('tp-abv')||1}catch(e){}S.abv=x>=1&&x<=5?x:1}return S.abv}
+function abV(){if(!S.abv){let x=1;try{x=+localStorage.getItem('tp-abv')||1}catch(e){}S.abv=x>=1&&x<=7?x:1}return S.abv}
 function abSwOn(){if(S.abSw===undefined){try{S.abSw=localStorage.getItem('tp-absw')==='1'}catch(e){S.abSw=false}}return S.abSw}
 const abPic=(n,w,alt)=>`<picture><source media="(max-width:767px)" srcset="img/about/hm.jpg"><img class="ab-img" src="img/about/${n}.jpg" srcset="img/about/${n}.jpg ${w}w, img/about/${n}@2x.jpg ${w*2}w" sizes="(max-width:767px) 100vw, ${w}px" alt="${alt}"></picture>`;
 const AB_ALT='Оператор строительной техники в кабине';
@@ -1883,8 +1890,9 @@ function abTop(v){
   if(v===1)return `<div class="ab-top">${abPic('hs',780,AB_ALT).replace('class="ab-img"','class="ab-img ab-hero"')}<div class="ab-mis"><h1 class="t-h1">${AB_T}</h1><p>${AB_P1}</p><p>${AB_P2}</p></div></div>`;
   if(v===2||v===3)return `<section class="abh2">${abPic('hw',1440,AB_ALT)}<div class="wrap"><h1>${AB_TH}</h1></div></section>`;
   if(v===4)return `<section class="abh3">${abPic('hu',1440,AB_ALT)}</section>`;
+  if(v>=6)return `<section class="abh5 abh6 ${v===7?'abh7':''}">${abPic('hx',1440,AB_ALT)}<div class="wrap"><h1>${AB_TH}</h1></div></section>`;
   return `<section class="abh5">${abPic('hx',1440,AB_ALT)}</section>`}
-function abTxt(v){if(v===2)return `<div class="abh-2c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;if(v===3)return `<div class="abh-1c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;
+function abTxt(v){if(v===2||v>=6)return `<div class="abh-2c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;if(v===3)return `<div class="abh-1c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`;
   return `<div class="abh3-row"><h1 class="t-h1">${AB_TH}</h1><div><p>${AB_P1}</p><p>${AB_P2}</p></div></div>`}
 function abSwitch(){return `<div class="abv-sw ${abSwOn()?'':'off'}" role="group" aria-label="Варианты шапки"><span>Шапка</span>${AB_VN.map((n,i)=>`<button data-abv="${i+1}" class="${abV()===i+1?'on':''}" title="${n}"><b>${i+1}</b><i>${n}</i></button>`).join('')}<button class="abv-x" data-abvx aria-label="Скрыть панель" title="Скрыть — ⌥V / Alt+V">${ic('x')}</button></div>`}
 function abSet(x){S.abv=x;try{localStorage.setItem('tp-abv',x)}catch(e){}render(true);scrollTo(0,0)}
@@ -1892,7 +1900,7 @@ function abToggle(on){S.abSw=on===undefined?!abSwOn():on;try{localStorage.setIte
 document.addEventListener('click',e=>{const b=e.target.closest('[data-abv],[data-abvx]');if(!b)return;e.stopPropagation();if('abvx' in b.dataset)return abToggle(false);abSet(+b.dataset.abv)},true);
 document.addEventListener('keydown',e=>{if(S.view!=='about')return;const t=e.target;if(t&&/INPUT|TEXTAREA/.test(t.tagName))return;
   if(e.altKey&&e.code==='KeyV'){e.preventDefault();return abToggle()}
-  if(abSwOn()&&!e.altKey&&!e.metaKey&&!e.ctrlKey&&/^Digit[1-5]$/.test(e.code)){abSet(+e.code.slice(5))}});
+  if(abSwOn()&&!e.altKey&&!e.metaKey&&!e.ctrlKey&&/^Digit[1-7]$/.test(e.code)){abSet(+e.code.slice(5))}});
 let abTap=[];document.addEventListener('touchend',e=>{if(S.view!=='about'||!e.target.closest('.ab h1'))return;const n=Date.now();abTap=abTap.filter(x=>n-x<700);abTap.push(n);if(abTap.length>=3){abTap=[];abToggle()}},{passive:true});
 window.addEventListener('scroll',()=>{app.classList.toggle('hdr-solid',scrollY>8)},{passive:true});
 window.abSwitch=abSwitch;window.abV=abV;
