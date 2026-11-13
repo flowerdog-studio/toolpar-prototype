@@ -991,7 +991,7 @@ html,body{overflow-x:clip}
 .abh2>.wrap{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;padding-bottom:64px}
 .abh2 h1{margin:0;font-size:44px;font-weight:700;line-height:1.08;color:#fff}
 .abh-c{width:780px;max-width:100%;margin:0;padding-top:64px;display:flex;flex-direction:column;gap:16px;text-align:left}.abh-c p{margin:0;font-size:18px;font-weight:500;line-height:1.5;color:var(--text-secondary)}
-.m .abh2{height:auto;aspect-ratio:4/5}.m .abh2 img{object-position:center}.m .abh2>.wrap{padding-bottom:24px}.m .abh2::after{background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,0) 70%)}
+.m .abh2{height:auto;aspect-ratio:4/5}.m .abh2 img{object-position:center top}.m .abh2>.wrap{padding-bottom:24px}.m .abh2::after{background:linear-gradient(0deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.3) 45%,rgba(0,0,0,0) 70%)}
 .m .abh2 h1{font-size:26px}.m .abh2 h1 br{display:none}
 .m .abh-c{width:auto;padding-top:28px;gap:12px}.m .abh-c p{font-size:15px}
 
@@ -1859,7 +1859,7 @@ const AB_P2='Работаем с горнодобывающими и нефте�
 const AB_TH='Сеть магазинов TSSP — <br>крупнейший поставщик <br>инструментов и строительного <br>оборудования в Казахстане';
 const AB_ALT='Оператор строительной техники в кабине';
 function abV(){return 2}
-function abTop(){return `<section class="abh2"><picture><source media="(max-width:767px)" srcset="img/about/hm.jpg"><img class="ab-img" src="img/about/hw.jpg" srcset="img/about/hw.jpg 1440w, img/about/hw@2x.jpg 2688w" sizes="(max-width:767px) 100vw, 1440px" alt="${AB_ALT}"></picture><div class="wrap"><h1>${AB_TH}</h1></div></section>`}
+function abTop(){return `<section class="abh2"><picture><source media="(max-width:767px)" srcset="img/about/hm.jpg 750w, img/about/hm@3x.jpg 1125w" sizes="100vw"><img class="ab-img" src="img/about/hw.jpg" srcset="img/about/hw.jpg 1440w, img/about/hw@2x.jpg 2688w" sizes="(max-width:767px) 100vw, 1440px" alt="${AB_ALT}"></picture><div class="wrap"><h1>${AB_TH}</h1></div></section>`}
 function abTxt(){return `<div class="abh-c"><p>${AB_P1}</p><p>${AB_P2}</p></div>`}
 window.abV=abV;
 window.AboutPage=AboutPage;window.ORDER=ORDER;window.PromosPage=PromosPage; window.BrandsPage=BrandsPage; window.Thanks=Thanks;
