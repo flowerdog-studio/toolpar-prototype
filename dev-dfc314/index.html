@@ -910,13 +910,13 @@ html,body{overflow-x:clip}
 .lp-hero{display:flex;gap:30px;align-items:center;justify-content:space-between;padding-top:24px}
 .lp-ht{width:780px;display:flex;flex-direction:column;align-items:flex-start;gap:24px}.lp-ht h1{line-height:1.05}.lp-ht .t-body-text{max-width:645px}
 .lp-btns{display:flex;gap:8px;margin-top:8px}.lp-btns .btn{width:auto;padding:0 32px}
-.lp-facts{width:375px;flex:none;display:flex;flex-direction:column}
+.lp-facts{width:510px;flex:none;display:flex;flex-direction:column}
 .lp-facts li{display:flex;flex-direction:column;gap:6px;padding:24px 0;border-top:1px solid var(--border-default)}.lp-facts li:first-child{border-top:0;padding-top:0}.lp-facts li:last-child{padding-bottom:0}
 .lp-facts span{color:var(--text-secondary)}
 .lp-sec{margin-top:120px}
 .lp-levels{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-.lp-lv{border:1px solid var(--border-default);border-top:4px solid var(--text-tertiary);padding:36px 32px 32px;display:flex;flex-direction:column;gap:24px}
-.lp-lv.l2{border-top-color:var(--action-primary-default)}.lp-lv.l3{border-top-color:var(--text-primary)}
+.lp-lv{position:relative;border:1px solid var(--border-default);padding:40px 32px 32px;display:flex;flex-direction:column;gap:24px}
+.lp-lv::before{content:'';position:absolute;left:-1px;right:-1px;top:-1px;height:4px;background:var(--text-tertiary)}.lp-lv.l2::before{background:var(--action-primary-default)}.lp-lv.l3::before{background:var(--text-primary)}
 .lp-lv .hd{display:flex;flex-direction:column;gap:6px}
 .lp-lv .rate{display:flex;align-items:flex-end;gap:12px;padding-bottom:24px;border-bottom:1px solid var(--border-default)}.lp-lv .rate b{line-height:.85}
 .lp-lv .pk{display:flex;flex-direction:column;gap:16px}.lp-lv .pk ul{display:flex;flex-direction:column;gap:16px}
@@ -927,17 +927,17 @@ html,body{overflow-x:clip}
 .lp-st{display:flex;align-items:center;gap:20px;padding:24px;background:var(--bg-secondary)}.lp-st .n{width:40px;height:40px;flex:none;display:grid;place-items:center;background:var(--action-primary-default)}.lp-st div{display:flex;flex-direction:column;gap:4px}
 .lp-steps .ar{display:grid;place-items:center}.lp-steps .ar .ico{width:24px;height:24px}
 .lp-imp{display:grid;grid-template-columns:1fr 1fr;gap:32px 30px}
-.lp-imp>div{border-top:1px solid var(--border-default);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.lp-imp>div{border-top:1px solid var(--border-default);padding-top:24px;display:flex;gap:16px;align-items:flex-start}.lp-imp>div>.ico{width:32px;height:32px;flex:none}.lp-imp>div>div{display:flex;flex-direction:column;gap:8px;padding-top:6px}
 .lp .h-row{margin-top:120px}
 .m .lp{padding:16px 0 56px}
 .m .lp-hero{flex-direction:column;align-items:stretch;gap:32px;padding-top:8px}.m .lp-ht{width:auto;gap:16px}.m .lp-ht h1{font-size:32px}.m .lp-ht .t-body-text{font-size:14px}
 .m .lp-btns{display:grid;grid-template-columns:1fr 1fr;width:100%}.m .lp-btns .btn{padding:0;height:48px}
-.m .lp-facts{width:auto}.m .lp-facts li{padding:16px 0}.m .lp-facts .t-h1{font-size:28px}.m .lp-facts .t-h2{font-size:22px}.m .lp-facts .t-body-l{font-size:14px}
+.m .lp-facts{width:auto}.m .lp-facts li{padding:16px 0}.m .lp-facts .t-h1{font-size:26px}.m .lp-facts .t-body-l{font-size:14px}
 .m .lp-sec,.m .lp .h-row{margin-top:64px}
-.m .lp-levels{grid-template-columns:1fr;gap:16px}.m .lp-lv{padding:24px 20px 20px;gap:20px}.m .lp-lv .rate{padding-bottom:20px}.m .lp-lv .t-h2{font-size:22px}
+.m .lp-levels{grid-template-columns:1fr;gap:16px}.m .lp-lv{padding:28px 20px 20px;gap:20px}.m .lp-lv .rate{padding-bottom:20px}.m .lp-lv .t-h2{font-size:22px}
 .m .lp-all{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
 .m .lp-steps{grid-template-columns:1fr;gap:8px}.m .lp-steps .ar{display:none}.m .lp-st{padding:16px;gap:16px}
-.m .lp-imp{grid-template-columns:1fr;gap:24px}
+.m .lp-imp{grid-template-columns:1fr;gap:24px}.m .lp-imp>div{padding-top:20px}.m .lp-imp>div>.ico{width:28px;height:28px}.m .lp-imp>div>div{padding-top:4px}
 
 /* Мобильные версии: Покупателям, Бренды, Спасибо (обёртка .m .mpg) */
 .m .mpg .wrap{padding-left:16px;padding-right:16px}
@@ -1217,7 +1217,7 @@ function Reel(name){return `<div class="reel" data-reel="${name}" role="button" 
 
 /* ---------- Хедер ---------- */
 function Header(){
-  return `<div class="wrap"><div class="utility"><div class="left"><span class="city">${ic('map-pin')}Алматы${ic('chevron-down','chev')}</span><span class="phone">+7 778 021 01 65</span><span class="callback">Заказать звонок</span></div><div class="right"><span>Контакты</span><span>Адреса магазинов</span><span class="ulink ${S.view==='about'?'on':''}" data-goabout>О компании</span><span class="ulink ${S.view==='help'||S.view==='loyalty'?'on':''}" data-gohelp="">Покупателям</span><span>Сотрудничество</span></div></div></div>
+  return `<div class="wrap"><div class="utility"><div class="left"><span class="city">${ic('map-pin')}Алматы${ic('chevron-down','chev')}</span><span class="phone">+7 778 021 01 65</span><span class="callback">Заказать звонок</span></div><div class="right"><span>Контакты</span><span>Адреса магазинов</span><span class="ulink ${S.view==='about'?'on':''}" data-goabout>О компании</span><span class="ulink ${S.view==='help'?'on':''}" data-gohelp="">Покупателям</span><span class="ulink ${S.view==='loyalty'?'on':''}" data-goloyal>Система привилегий</span><span>Сотрудничество</span></div></div></div>
   <div class="shopping" id="shopping"><div class="wrap" style="position:relative"><div class="row">
     <button class="logo" data-home aria-label="На главную">${LOGO}</button>
     <button class="btn-catalog" id="btnCatalog" aria-expanded="${S.menuOpen}">${ic(S.menuOpen?'x':'layout-grid')}Каталог</button>
@@ -1861,18 +1861,18 @@ document.addEventListener('click',e=>{const t=e.target.closest('[data-gopromos],
 /* ---------- Система привилегий ---------- */
 const LP_LV=[['Участник','При регистрации','3%','Базовые привилегии:',[['Оплата бонусами','до 50% заказа'],['Скидка на доставку межгород','10%']]],['Резидент','От 500 000 ₸ покупок за год','4%','Всё из «Участника», плюс:',[['Оплата бонусами','до 75% заказа'],['Скидка на доставку межгород','15%'],['Закрытые распродажи','']]],['Партнёр','От 2 000 000 ₸ покупок за год','5%','Всё из «Резидента», плюс:',[['Оплата бонусами','до 100% заказа'],['Скидка на доставку межгород','20%'],['Персональные предложения','']]]];
 const LP_ST=[['Зарегистрируйтесь','На сайте, в приложении или на кассе'],['Покупайте','Бонусы придут после получения заказа'],['Оплачивайте бонусами','В корзине или на кассе магазина']];
-const LP_IMP=[['Кешбэк при переходе на следующий уровень','Кешбэк за покупки до перехода рассчитывается по ставке текущего уровня. Новый процент применяется к покупкам после перехода.'],['Как присваивается уровень','Уровень зависит от суммы покупок за календарный год и пересчитывается 1 января.'],['Доставка межгород','Скидка действует на заказы от 200 000 ₸ — только при оформлении на сайте или в мобильном приложении.'],['Доставка курьером','Бесплатно по городу при заказе от 10 000 ₸ в городах, где есть магазины Toolpar.']];
+const LP_IMP=[['credit-card','Кешбэк при переходе на следующий уровень','Кешбэк за покупки до перехода рассчитывается по ставке текущего уровня. Новый процент применяется к покупкам после перехода.'],['calendar','Как присваивается уровень','Уровень зависит от суммы покупок за календарный год и пересчитывается 1 января.'],['truck','Доставка межгород','Скидка действует на заказы от 200 000 ₸ — только при оформлении на сайте или в мобильном приложении.'],['map-pin','Доставка курьером','Бесплатно по городу при заказе от 10 000 ₸ в городах, где есть магазины Toolpar.']];
 const LP_FAQ=[['Как происходит регистрация в системе привилегий?','Зарегистрируйтесь на сайте, в мобильном приложении или на кассе любого магазина по номеру телефона — уровень «Участник» присвоится сразу.'],['Какой уровень привилегий присваивается при регистрации?','«Участник» — кешбэк 3% бонусами с первой покупки и оплата бонусами до 50% заказа.'],['Через сколько времени обновляется уровень привилегий?','Сразу после того, как сумма покупок за календарный год достигнет порога следующего уровня.'],['Что будет, если не достигнуть необходимой суммы покупок для поддержания уровня?','1 января уровень пересчитывается по сумме покупок за прошедший год — он может стать ниже.'],['Когда проводится ежегодная проверка уровней привилегий?','Каждый год 1 января.'],['Какие покупки не учитываются в системе привилегий?','Подарочные сертификаты, услуги доставки и возвращённые товары.'],['Могу ли я передать свои привилегии или накопленный кешбэк другому человеку?','Нет, уровень и бонусы привязаны к номеру телефона участника.']];
 S.lfaq=0;
 function LoyaltyPage(){
   return `<div class="wrap lp">
    <section class="lp-hero"><div class="lp-ht"><p class="t-body-l-strong muted">Система привилегий</p><h1 class="t-display">Кешбэк до 5%<br>с каждой покупки</h1><p class="t-body-text muted">Стань участником новой программы лояльности: копи бонусы и оплачивай ими до 100% стоимости товара.</p><div class="lp-btns"><button class="btn btn-primary" data-toast="Регистрация — в следующей версии">Стать участником</button><button class="btn btn-secondary" data-toast="Вход — в следующей версии">Войти</button></div></div>
-    <ul class="lp-facts"><li><b class="t-h1">до 5%</b><span class="t-body-l">кешбэк бонусами</span></li><li><b class="t-h1">до 100%</b><span class="t-body-l">стоимости товара бонусами</span></li><li><b class="t-h2">Закрытые распродажи</b><span class="t-body-l">и персональные предложения</span></li></ul></section>
+    <ul class="lp-facts"><li><b class="t-h1">до 5%</b><span class="t-body-l">кешбэк бонусами</span></li><li><b class="t-h1">до 100%</b><span class="t-body-l">стоимости товара бонусами</span></li><li><b class="t-h1">Закрытые распродажи</b><span class="t-body-l">и персональные предложения</span></li></ul></section>
    <section class="sect lp-sec">${SectionHeader('Три уровня привилегий')}
     <div class="lp-levels">${LP_LV.map(([n,c,p,h,items],i)=>`<article class="lp-lv l${i+1}"><div class="hd"><h3 class="t-h2">${n}</h3><p class="t-body-m muted">${c}</p></div><div class="rate"><b class="t-display">${p}</b><span class="t-body-m-strong">бонусами<br>с каждой покупки</span></div><div class="pk"><p class="t-body-m muted">${h}</p><ul>${items.map(([a,b])=>`<li>${ic('check')}<div><b class="t-body-l-strong">${a}</b>${b?`<span class="t-body-m muted">${b}</span>`:''}</div></li>`).join('')}</ul></div></article>`).join('')}</div>
     <div class="lp-all"><b class="t-body-l-strong">Всем участникам</b>${['Бесплатный курьер по городу от 10 000 ₸','Бонусы и скидки в день рождения','Кешбэк 1% на товары от 1 000 000 ₸'].map(t=>`<span class="t-body-m">${ic('check')}${t}</span>`).join('')}</div></section>
    <section class="sect lp-sec">${SectionHeader('Как копить и тратить')}<div class="lp-steps">${LP_ST.map(([t,d],i)=>`${i?`<div class="ar">${ic('arrow-right')}</div>`:''}<div class="lp-st"><span class="n t-h4">${i+1}</span><div><h3 class="t-h4">${t}</h3><p class="t-body-m muted">${d}</p></div></div>`).join('')}</div></section>
-   <section class="sect lp-sec">${SectionHeader('Важно знать')}<div class="lp-imp">${LP_IMP.map(([t,d])=>`<div><h3 class="t-h4">${t}</h3><p class="t-body-m muted">${d}</p></div>`).join('')}</div></section>
+   <section class="sect lp-sec">${SectionHeader('Важно знать')}<div class="lp-imp">${LP_IMP.map(([i,t,d])=>`<div>${ic(i)}<div><h3 class="t-h4">${t}</h3><p class="t-body-m muted">${d}</p></div></div>`).join('')}</div></section>
    <div class="h-row"><section class="sect h-faqw">${SectionHeader('Частые вопросы')}<div class="h-faq">${LP_FAQ.map((f,i)=>{const o=S.lfaq===i;return `<div class="h-fq ${o?'open':''}"><button class="q" data-lfaq="${i}" aria-expanded="${o}"><span class="t-h4">${esc(f[0])}</span>${ic(o?'chevron-up':'chevron-down')}</button>${o?`<div class="a"><p class="t-body-text">${esc(f[1])}</p></div>`:''}</div>`}).join('')}</div></section><aside class="h-contact">${ic('circle-help')}<h3 class="t-h3">Остались вопросы?</h3><p class="t-body-m muted">Позвоните или закажите звонок — расскажем о программе и проверим ваш уровень.</p><b class="t-h3">+7 778 021 01 65</b><button class="btn btn-primary" data-toast="Менеджер перезвонит в течение 15 минут">${ic('phone')}Заказать звонок</button></aside></div>
   </div>`}
 window.LoyaltyPage=LoyaltyPage;
