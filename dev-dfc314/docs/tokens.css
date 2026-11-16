@@ -1,0 +1,141 @@
+/*
+  Toolpar — дизайн-токены для продакшна.
+  Источник: Figma «Toolpar DS» (коллекции Color, Spacing, Layout, текстовые стили)
+  и прототип dev-dfc314/index.html (:root). Имена совпадают с Code syntax в Figma.
+  Подключайте этот файл первым; компоненты используют только var(--…) и классы .t-*.
+*/
+
+:root {
+  color-scheme: light;
+
+  /* ---------- Цвет: фон ---------- */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F7F7F7;
+  --bg-tertiary: #F2F2F2;          /* подложка фото товаров, серые плашки */
+
+  /* ---------- Цвет: элементы управления ---------- */
+  --control-bg: #E9E9E9;
+  --control-bg-strong: #E9E9E9;
+  --control-on-photo: #DEDEDE;     /* счётчик количества поверх фото в карточке */
+
+  /* ---------- Цвет: текст и иконки ---------- */
+  --text-primary: #000000;
+  --text-secondary: #939393;
+  --text-tertiary: #BABABA;
+  --text-placeholder: #686868;
+  --text-inverse: #FFFFFF;
+  --text-card-hover: #999722;      /* цвет текста карточки товара при наведении */
+  --text-menu-inactive: #7E7E7E;   /* неактивные пункты открытого каталога */
+  --icon-primary: #000000;
+  --icon-hover: #8A8A8A;           /* иконка-кнопка (стрелки каруселей) при наведении */
+  --icon-disabled: #D1D1D1;        /* неактивная иконка-кнопка */
+
+  /* ---------- Цвет: границы ---------- */
+  --border-default: #E9E9E9;
+  --border-strong: #000000;
+
+  /* ---------- Цвет: действия ---------- */
+  --action-primary-default: #FFFC39;   /* главное действие — только жёлтый */
+  --action-primary-pressed: #FFFD7E;   /* hover и pressed жёлтых кнопок */
+  --action-secondary-default: #F2F2F2;
+  --action-secondary-hover: #E9E9E9;
+  --action-neutral-default: #E9E9E9;
+  --action-installment-default: #F14635; /* рассрочка */
+  --action-installment-hover: #F4695B;
+
+  /* ---------- Цвет: бейджи и коммерция ---------- */
+  --badge-sale: #FFFC39;
+  --badge-hit: #FFFC39;
+  --badge-new: #3194FF;
+  --commerce-price-old: #939393;
+
+  /* ---------- Оверлеи ---------- */
+  --overlay-scrim: rgba(0, 0, 0, .88);  /* фон полноэкранного просмотра рилсов */
+
+  /* ---------- Отступы (шкала Spacing) ---------- */
+  --space-0: 0;
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-60: 60px;
+
+  /* ---------- Сетка (Layout, режим Desktop) ---------- */
+  --layout-page-margin: 60px;
+  --layout-grid-gutter: 30px;
+  --layout-column-width: 240px;   /* 5 колонок */
+  --layout-half-column: 105px;    /* 10 полуколонок */
+  --layout-content: 1320px;
+  --layout-grid-row-gap: 48px;
+  --nav-h: 92px;                  /* высота ShoppingNav */
+
+  /* ---------- Типографика ---------- */
+  --font: "Inter", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --type-display: 44px;
+  --type-h1: 32px;
+  --type-h2: 26px;
+  --type-h3: 20px;
+  --type-price-xl: 36px;
+  --type-price-l: 21px;
+  --type-price-old-l: 18px;
+}
+
+/* Мобильный режим (Layout = Mobile): ширина ≤ 767 px */
+@media (max-width: 767px) {
+  :root {
+    --layout-page-margin: 16px;
+    --layout-grid-gutter: 12px;
+    --layout-column-width: 165.5px; /* 2 карточки в ряд на 375 */
+    --layout-grid-row-gap: 32px;
+    --type-display: 28px;
+    --type-h1: 22px;
+    --type-h2: 18px;
+    --type-h3: 17px;
+    --type-price-xl: 30px;
+    --type-price-l: 17px;
+    --type-price-old-l: 16px;
+  }
+}
+
+/* ---------- Текстовые стили (Figma: Text Styles → CSS-классы) ---------- */
+body { font-family: var(--font); color: var(--text-primary); background: var(--bg-primary); -webkit-font-smoothing: antialiased; }
+
+.t-display        { font-size: var(--type-display); font-weight: 700; line-height: 1; }
+.t-h1             { font-size: var(--type-h1); font-weight: 700; line-height: 1; text-wrap: balance; }
+.t-h2             { font-size: var(--type-h2); font-weight: 600; line-height: 1.25; }
+.t-h3             { font-size: var(--type-h3); font-weight: 700; line-height: 1.25; }
+.t-h4             { font-size: 16px; font-weight: 700; line-height: 1.2; }
+.t-body-lead      { font-size: 18px; font-weight: 500; line-height: 1.5; }
+.t-body-text      { font-size: 15px; font-weight: 500; line-height: 1.5; }
+.t-body-l         { font-size: 15px; font-weight: 500; line-height: 1.3; }
+.t-body-l-strong  { font-size: 15px; font-weight: 600; line-height: 1.3; }
+.t-body-m         { font-size: 14px; font-weight: 400; line-height: 1.3; }
+.t-body-m-strong  { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.t-body-s         { font-size: 13px; font-weight: 500; line-height: 1.3; }
+.t-body-s-strong  { font-size: 13px; font-weight: 600; line-height: 1.3; }
+.t-body-s-bold    { font-size: 13px; font-weight: 700; line-height: 1.3; }
+.t-caption        { font-size: 12px; font-weight: 400; line-height: 1.3; }
+.t-caption-medium { font-size: 12px; font-weight: 500; line-height: 1.3; }
+.t-caption-strong { font-size: 12px; font-weight: 600; line-height: 1.3; }
+.t-micro-bold     { font-size: 10px; font-weight: 700; line-height: 1.2; }
+.t-price-xl       { font-size: var(--type-price-xl); font-weight: 700; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.t-price-l        { font-size: var(--type-price-l); font-weight: 700; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.t-price-old-l    { font-size: var(--type-price-old-l); font-weight: 600; line-height: 1.05; text-decoration: line-through; color: var(--commerce-price-old); }
+.t-price-old      { font-size: 13px; font-weight: 600; line-height: 1.05; text-decoration: line-through; color: var(--commerce-price-old); }
+
+/* ---------- База ---------- */
+.wrap {
+  width: 100%;
+  max-width: calc(var(--layout-content) + 2 * var(--layout-page-margin));
+  margin: 0 auto;
+  padding-left: max(16px, var(--layout-page-margin), env(safe-area-inset-left, 0px));
+  padding-right: max(16px, var(--layout-page-margin), env(safe-area-inset-right, 0px));
+}
+:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
+/* Скруглений в системе нет: border-radius не используется нигде, кроме точки-пульса статуса заказа. */

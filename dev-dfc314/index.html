@@ -23,6 +23,10 @@
   --layout-page-margin:60px; --layout-grid-gutter:30px; --layout-column-width:240px;
   --layout-content:1320px; --nav-h:92px;
   --font:"Inter",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+  --control-bg-strong:#E9E9E9; --control-on-photo:#DEDEDE; --icon-primary:#000000; --icon-hover:#8A8A8A; --icon-disabled:#D1D1D1;
+  --action-neutral-default:#E9E9E9; --text-card-hover:#999722; --text-menu-inactive:#7E7E7E; --badge-hit:#FFFC39;
+  --layout-grid-row-gap:48px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:auto}
@@ -42,6 +46,7 @@ img{display:block;max-width:100%}
 .t-h2{font-size:26px;font-weight:600;line-height:1.25}
 .t-h3{font-size:20px;font-weight:700;line-height:1.25}
 .t-h4{font-size:16px;font-weight:700;line-height:1.2}
+.t-body-lead{font-size:18px;font-weight:500;line-height:1.5}
 .t-body-text{font-size:15px;font-weight:500;line-height:1.5}
 .t-body-l{font-size:15px;font-weight:500;line-height:1.3}
 .t-body-l-strong{font-size:15px;font-weight:600;line-height:1.3}
@@ -112,7 +117,7 @@ img{display:block;max-width:100%}
 .btn-installment .ico{color:var(--text-inverse)}
 .btn-sm{height:48px;padding:0 20px;width:auto;font-size:14px}
 .iconbtn{width:48px;height:48px;display:grid;place-items:center;color:var(--text-primary)}
-.iconbtn:hover{color:#8A8A8A}.iconbtn:disabled{color:#D1D1D1;cursor:default}
+.iconbtn:hover{color:var(--icon-hover)}.iconbtn:disabled{color:var(--icon-disabled);cursor:default}
 .link{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:600}
 .link .ico{width:16px;height:16px}
 
@@ -593,36 +598,36 @@ html,body{overflow-x:clip}
 
 /* ===== Раскатка: квадратное фото на сером, компактный счётчик, спокойный ховер ===== */
 .pcard .media{height:240px}
-.pcard .slides{height:240px;background:#F2F2F2}
+.pcard .slides{height:240px;background:var(--bg-tertiary)}
 .pcard .slides img{height:240px;background:transparent;mix-blend-mode:normal}
 .sdots{display:none!important}
 .pcard .pcta{bottom:0}
 .pcard .pcta.in{bottom:0;left:auto;width:96px}
-.pcard .pcta.in .stepper{background:#DEDEDE;padding:0 8px}
+.pcard .pcta.in .stepper{background:var(--control-on-photo);padding:0 8px}
 .pcard .info{padding-top:16px}
 .pcard .info,.pcard .info *,.pcard .title-wrap,.pcard .title-wrap *,.pcard .delivery,.pcard .delivery *,.pcard .oos,.pcard .oos *{transition:none!important}
-@media (hover:hover){.pcard:hover .info,.pcard:hover .info *,.pcard:hover .title-wrap,.pcard:hover .title-wrap *,.pcard:hover .delivery,.pcard:hover .delivery *,.pcard:hover .oos,.pcard:hover .oos *{color:#999722!important}.pcard:hover .bonus i{opacity:.5}}
-.catalog ul.sel .mitem,.catalog ul.sel .mitem .ico{color:#7E7E7E}
+@media (hover:hover){.pcard:hover .info,.pcard:hover .info *,.pcard:hover .title-wrap,.pcard:hover .title-wrap *,.pcard:hover .delivery,.pcard:hover .delivery *,.pcard:hover .oos,.pcard:hover .oos *{color:var(--text-card-hover)!important}.pcard:hover .bonus i{opacity:.5}}
+.catalog ul.sel .mitem,.catalog ul.sel .mitem .ico{color:var(--text-menu-inactive)}
 .catalog ul.sel .mitem.active,.catalog ul.sel .mitem.active .ico,.catalog .mitem.live:hover{color:var(--text-primary)}
 .catalog{position:fixed;left:0;right:0;bottom:0;max-height:none;overflow:auto;overscroll-behavior:contain;z-index:60}
 .m .pcard .media{height:auto}
-.m .pcard .slides{height:auto;aspect-ratio:1/1;background:#F2F2F2}
+.m .pcard .slides{height:auto;aspect-ratio:1/1;background:var(--bg-tertiary)}
 .m .pcard .slides img{height:auto;aspect-ratio:1/1;mix-blend-mode:normal;background:transparent}
 .m .pcard .pcta.in{width:80px}
-.m .pcard .pcta.in .stepper{background:#DEDEDE;padding:0 6px}
+.m .pcard .pcta.in .stepper{background:var(--control-on-photo);padding:0 6px}
 .rev-foot{display:flex;align-items:center;gap:32px;padding-top:8px}
 .rev-foot .link .ico{width:16px;height:16px}
 .rev-foot.mob{flex-direction:column;align-items:stretch;gap:16px}
 .more-btn{align-self:center;width:auto;padding:0 40px;margin-top:16px}
-.gallery .main{background:#F2F2F2}
+.gallery .main{background:var(--bg-tertiary)}
 .brands{display:flex;gap:30px;overflow-x:auto;scrollbar-width:none;margin:0 -40px;padding:0 40px;-webkit-mask:linear-gradient(90deg,transparent,#000 40px,#000 calc(100% - 40px),transparent)}
 .brands::-webkit-scrollbar{display:none}.brands .brand-tile{flex:none;width:280px}
 .br-head{display:flex;justify-content:space-between;align-items:center}
 .m-brands{display:flex;overflow-x:auto;scrollbar-width:none;gap:12px}.m-brands::-webkit-scrollbar{display:none}
 .m-brands div{flex:none;width:128px}
-.gallery .thumbs .tb{background:#F2F2F2;border-color:transparent}
+.gallery .thumbs .tb{background:var(--bg-tertiary);border-color:transparent}
 .gallery .thumbs .tb.on{border:2px solid var(--text-primary)}
-.m-gal .snap img{background:#F2F2F2}
+.m-gal .snap img{background:var(--bg-tertiary)}
 .reel img{background:none}
 /* ===== Корзина / ЛК ===== */
 .ck{padding-top:40px}
@@ -638,7 +643,7 @@ html,body{overflow-x:clip}
 .ck-iact{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--text-primary);white-space:nowrap}
 .ck-iact .ico{width:16px;height:16px}.ck-iact.muted,.ck-line .acts .ck-iact{color:var(--text-secondary);font-weight:500}
 .ck-line{display:grid;grid-template-columns:20px 120px 1fr 220px 140px;gap:16px 24px;padding:24px 0;border-bottom:1px solid var(--border-default);align-items:start}
-.ck-line .ph{width:120px;height:120px;background:#F2F2F2;display:grid;place-items:center}.ck-line .ph img{width:100%;height:100%;object-fit:contain}
+.ck-line .ph{width:120px;height:120px;background:var(--bg-tertiary);display:grid;place-items:center}.ck-line .ph img{width:100%;height:100%;object-fit:contain}
 .ck-line .inf{display:flex;flex-direction:column;justify-content:space-between;align-self:stretch;gap:12px}
 .ck-line .ttl{font-size:15px;font-weight:500;line-height:1.3}.ck-line .ttl b{font-weight:800}
 .ck-line .code{font-size:12px;color:var(--text-secondary);display:block;margin-top:4px}
@@ -665,7 +670,7 @@ html,body{overflow-x:clip}
 .ck-grp{padding:16px 0;border-bottom:1px solid var(--border-default)}.ck-grp:first-child{border-top:1px solid var(--border-default)}
 .ck-grp .h{display:flex;gap:6px;align-items:baseline;font-size:14px}.ck-grp .h span{color:var(--text-secondary)}
 .ck-grp .th{display:flex;gap:12px;margin-top:12px;flex-wrap:wrap}
-.ck-grp .tb{width:64px;height:64px;background:#F2F2F2;position:relative}.ck-grp .tb img{width:100%;height:100%;object-fit:contain}
+.ck-grp .tb{width:64px;height:64px;background:var(--bg-tertiary);position:relative}.ck-grp .tb img{width:100%;height:100%;object-fit:contain}
 .ck-grp .tb i{position:absolute;right:0;bottom:0;background:var(--action-primary-default);font-size:11px;font-weight:700;font-style:normal;padding:1px 4px}
 .ck-comment{width:100%;height:96px;border:0;background:var(--bg-secondary);padding:16px;font:inherit;font-size:14px;resize:vertical}
 .ck-sum{display:flex;flex-direction:column;gap:20px}.ck-sum h3{font-size:20px;font-weight:700;margin:0}
@@ -692,7 +697,7 @@ html,body{overflow-x:clip}
 .lk h2{font-size:26px;margin:0 0 20px}
 .lk-dl{display:flex;gap:6px;align-items:baseline;font-size:15px;padding-bottom:16px;border-bottom:1px solid var(--border-default)}.lk-dl span{color:var(--text-secondary)}
 .lk-it{display:flex;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--border-default)}
-.lk-it .ph{width:64px;height:64px;background:#F2F2F2;flex:none}.lk-it .ph img{width:100%;height:100%;object-fit:contain}
+.lk-it .ph{width:64px;height:64px;background:var(--bg-tertiary);flex:none}.lk-it .ph img{width:100%;height:100%;object-fit:contain}
 .lk-it .t{flex:1;display:flex;flex-direction:column;gap:4px;font-size:14px}.lk-it .t b{font-weight:800}.lk-it em{font-style:normal;font-size:12px;color:var(--text-secondary)}.lk-it .p{font-size:16px;white-space:nowrap}
 .lk-info>div{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--border-default);font-size:14px}.lk-info span{color:var(--text-secondary)}
 .lk-status h3{font-size:20px;margin:0 0 24px}
@@ -910,8 +915,8 @@ html,body{overflow-x:clip}
 .lp-hero{position:relative;height:570px;background:var(--action-primary-default);overflow:hidden;display:flex;align-items:center}
 .lp-hero picture,.lp-hero img{position:absolute;inset:0;width:100%;height:100%}.lp-hero img{object-fit:cover;object-position:right center}
 .lp-ht{position:relative;width:645px;margin-left:60px;display:flex;flex-direction:column;align-items:flex-start;gap:24px}.lp-ht h1{line-height:1.05}
-.lp-lead{font-size:20px;font-weight:500;line-height:1.3;max-width:480px}
-.lp-join{width:auto;padding:0 48px;margin-top:24px;background:var(--text-primary);color:var(--text-inverse)}.lp-join:hover{background:#262626}
+.lp-lead{max-width:480px}
+.lp-join{width:auto;padding:0 48px;margin-top:24px;background:var(--text-primary);color:var(--text-inverse)}.lp-join:hover{background:rgba(0,0,0,.85)}
 .lp .lp-facts{display:grid;grid-template-columns:285px 330px 1fr;gap:30px;margin-top:56px}
 .lp-facts li{display:flex;flex-direction:column;gap:6px}.lp-facts span{color:var(--text-secondary)}
 .lp-sec{margin-top:120px}
@@ -1869,7 +1874,7 @@ const LP_FAQ=[['Как происходит регистрация в систе
 S.lfaq=0;
 function LoyaltyPage(){
   return `<div class="wrap lp">
-   <section class="lp-hero"><picture><source media="(max-width: 767px)" srcset="img/loyalty/hero-m.jpg"><img src="img/loyalty/hero.jpg" srcset="img/loyalty/hero.jpg 1x, img/loyalty/hero@2x.jpg 2x" alt="Карты Участника, Резидента и Партнёра"></picture><div class="lp-ht"><h1 class="t-display">Кешбэк до 5%<br>с каждой покупки</h1><p class="lp-lead">Стань участником программы лояльности: копи бонусы и оплачивай ими до 100% стоимости товара</p><button class="btn lp-join" data-toast="Регистрация — в следующей версии">Стать участником</button></div></section>
+   <section class="lp-hero"><picture><source media="(max-width: 767px)" srcset="img/loyalty/hero-m.jpg"><img src="img/loyalty/hero.jpg" srcset="img/loyalty/hero.jpg 1x, img/loyalty/hero@2x.jpg 2x" alt="Карты Участника, Резидента и Партнёра"></picture><div class="lp-ht"><h1 class="t-display">Кешбэк до 5%<br>с каждой покупки</h1><p class="t-body-lead lp-lead">Стань участником программы лояльности: копи бонусы и оплачивай ими до 100% стоимости товара</p><button class="btn lp-join" data-toast="Регистрация — в следующей версии">Стать участником</button></div></section>
     <ul class="lp-facts"><li><b class="t-h1">до 5%</b><span class="t-body-l">кешбэк бонусами</span></li><li><b class="t-h1">до 100%</b><span class="t-body-l">стоимости товара бонусами</span></li><li><b class="t-h1">Закрытые распродажи</b><span class="t-body-l">и персональные предложения</span></li></ul>
    <section class="sect lp-sec">${SectionHeader('Три уровня привилегий')}
     <div class="lp-levels">${LP_LV.map(([n,c,p,h,items],i)=>`<article class="lp-lv l${i+1}"><div class="hd"><h3 class="t-h2">${n}</h3><p class="t-body-m muted">${c}</p></div><div class="rate"><b class="t-display">${p}</b><span class="t-body-m-strong">бонусами<br>с каждой покупки</span></div><div class="pk"><p class="t-body-m muted">${h}</p><ul>${items.map(([a,b])=>`<li>${ic('check')}<div><b class="t-body-l-strong">${a}</b>${b?`<span class="t-body-m muted">${b}</span>`:''}</div></li>`).join('')}</ul></div></article>`).join('')}</div>
