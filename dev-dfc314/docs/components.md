@@ -6,9 +6,9 @@
 
 | Figma | В прототипе | Варианты и поведение |
 |---|---|---|
-| Button | `.btn` + `.btn-primary` / `.btn-secondary` / `.btn-sm` | Type: Primary (жёлтая), Secondary (серая), Dark (чёрная, на жёлтом баннере). Size: XL/L 56, M 48. State: Default, Hover, Pressed, Disabled (30%). Опционально иконка слева, 20 px. |
+| Button | `.btn` + `.btn-primary` / `.btn-secondary` / `.btn-sm` | Type: Primary (жёлтая), Secondary (серая), Dark (чёрная, на жёлтом баннере). Size: XL 56 (`.btn` — покупка в товаре, оформление в корзине), L 48 (`.btn-sm` — стандарт), M 40 (компактная: мобилка, карточки). State: Default, Hover (нажатие на мобилке выглядит так же), Disabled (30%). Опционально иконка слева, 20 px. |
 | InstallmentButton | `.btn-installment` | Красная кнопка рассрочки с иконкой банка. В товаре квадратная 56, в мобильной липкой панели 48. |
-| IconButton | `.iconbtn` | 48 × 48, иконка 24. Ghost — стрелки каруселей (hover `--icon-hover`, край ленты — disabled). |
+| IconButton | `.iconbtn` | Primary — жёлтая кнопка корзины на фото карточки (Default, Hover). Ghost — стрелки каруселей (Hover `--icon-hover`, край ленты — Disabled). |
 | Link | `.link` | Подчёркнутая ссылка («Заказать звонок»). |
 
 ## Поля и фильтры (Components / Inputs)

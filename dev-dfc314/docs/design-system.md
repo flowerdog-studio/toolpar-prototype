@@ -82,7 +82,7 @@
 
 ## Состояния
 
-| Элемент | Hover | Pressed / Active | Disabled |
+| Элемент | Hover (на мобилке — нажатие) | Active / выбранное | Disabled |
 |---|---|---|---|
 | Жёлтая кнопка | `#FFFD7E` | `#FFFD7E` | прозрачность 30% |
 | Серая кнопка (Secondary) | `--action-secondary-hover` | — | прозрачность 30% |
